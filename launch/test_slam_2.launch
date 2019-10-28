@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+    <master auto="start"/> <!-- Start roscore -->
+    <arg name="camera" default="camera" /> <!-- define argument camera -->
+    
+    <!-- Connect to robot platform -->
+    <node pkg="rosaria" type="RosAria" name="RosAria">
+      <param name="port" value="/dev/ttyUSB0" type="string"/>
+      <!--<param name="publish_aria_lasers" value="true" type="bool"/>--> <!--Simulation-->
+    </node>
+    
+    <!-- Connect to camera kinect device -->
+    <include file="$(find openni_launch)/launch/openni.launch">
+       <arg name="camera" default="$(arg camera)"/> 
+    </include>
+  
+    <!-- Broadcast Transform of robot -->
+    <node pkg="robot_setup_tf" type = "tf_broadcaster_test" name="tf_broadcaster_test" />
+
+    <!-- Run laserscan node -->
+    <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan">
+
+        <remap from="image" to="$(arg camera)/depth/image_raw"/>
+        <remap from="scan" to="/scan"/>
+        <rosparam>
+            output_frame_id: base_laser 
+            transform_tolerance: 0.01
+            scan_height: 1
+            scan_time: 0.03333
+            range_min: 0.45
+            range_max: 10.0
+          
+        </rosparam>
+
+    </node>
+
+    <!-- Run Gmapping -->
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
+        <remap from="scan" to="/scan"/>
+        <!-- Simulation -->
+        <!--<remap from="scan" to="/RosAria/sim_lms1xx_1_laserscan" />-->
+    </node>
+    <node pkg="rviz" type="rviz" name="rviz"/>
+
+</launch>

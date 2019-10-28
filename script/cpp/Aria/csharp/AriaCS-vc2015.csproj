@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5270739-10F2-4205-8C40-81470C1CB45A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AriaCS</RootNamespace>
+    <AssemblyName>AriaCS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ar3DPoint.cs" />
+    <Compile Include="ArAction.cs" />
+    <Compile Include="ArActionAvoidFront.cs" />
+    <Compile Include="ArActionAvoidSide.cs" />
+    <Compile Include="ArActionBumpers.cs" />
+    <Compile Include="ArActionColorFollow.cs" />
+    <Compile Include="ArActionConstantVelocity.cs" />
+    <Compile Include="ArActionDeceleratingLimiter.cs" />
+    <Compile Include="ArActionDesired.cs" />
+    <Compile Include="ArActionDesiredChannel.cs" />
+    <Compile Include="ArActionDriveDistance.cs" />
+    <Compile Include="ArActionGoto.cs" />
+    <Compile Include="ArActionGotoStraight.cs" />
+    <Compile Include="ArActionGroup.cs" />
+    <Compile Include="ArActionGroupColorFollow.cs" />
+    <Compile Include="ArActionGroupInput.cs" />
+    <Compile Include="ArActionGroupRatioDrive.cs" />
+    <Compile Include="ArActionGroupRatioDriveUnsafe.cs" />
+    <Compile Include="ArActionGroupStop.cs" />
+    <Compile Include="ArActionGroupTeleop.cs" />
+    <Compile Include="ArActionGroupUnguardedTeleop.cs" />
+    <Compile Include="ArActionGroupWander.cs" />
+    <Compile Include="ArActionInput.cs" />
+    <Compile Include="ArActionIRs.cs" />
+    <Compile Include="ArActionJoydrive.cs" />
+    <Compile Include="ArActionKeydrive.cs" />
+    <Compile Include="ArActionLimiterBackwards.cs" />
+    <Compile Include="ArActionLimiterForwards.cs" />
+    <Compile Include="ArActionLimiterTableSensor.cs" />
+    <Compile Include="ArActionMovementParameters.cs" />
+    <Compile Include="ArActionRatioInput.cs" />
+    <Compile Include="ArActionRobotJoydrive.cs" />
+    <Compile Include="ArActionStallRecover.cs" />
+    <Compile Include="ArActionStop.cs" />
+    <Compile Include="ArActionTriangleDriveTo.cs" />
+    <Compile Include="ArActionTurn.cs" />
+    <Compile Include="ArACTSBlob.cs" />
+    <Compile Include="ArACTS_1_2.cs" />
+    <Compile Include="ArAMPTU.cs" />
+    <Compile Include="ArAMPTUCommands.cs" />
+    <Compile Include="ArAMPTUPacket.cs" />
+    <Compile Include="ArAnalogGyro.cs" />
+    <Compile Include="ArArg.cs" />
+    <Compile Include="ArArgumentBuilder.cs" />
+    <Compile Include="ArArgumentBuilderCompareOp.cs" />
+    <Compile Include="ArArgumentParser.cs" />
+    <Compile Include="ArASyncTask.cs" />
+    <Compile Include="ArBasePacket.cs" />
+    <Compile Include="ArBumpers.cs" />
+    <Compile Include="ArCallbackList.cs" />
+    <Compile Include="ArCameraCollection.cs" />
+    <Compile Include="ArCameraCollectionItem.cs" />
+    <Compile Include="ArCameraCommands.cs" />
+    <Compile Include="ArCameraParameterSource.cs" />
+    <Compile Include="ArColor.cs" />
+    <Compile Include="ArCommands.cs" />
+    <Compile Include="ArCompassConnector.cs" />
+    <Compile Include="ArCondition.cs" />
+    <Compile Include="ArConfig.cs" />
+    <Compile Include="ArConfigArg.cs" />
+    <Compile Include="ArConfigArg_Bool.cs" />
+    <Compile Include="ArConfigArg_Double.cs" />
+    <Compile Include="ArConfigArg_Int.cs" />
+    <Compile Include="ArConfigArg_String.cs" />
+    <Compile Include="ArConfigGroup.cs" />
+    <Compile Include="ArConfigSection.cs" />
+    <Compile Include="ArDataLogger.cs" />
+    <Compile Include="ArDeviceConnection.cs" />
+    <Compile Include="ArDPPTU.cs" />
+    <Compile Include="ArDPPTUCommands.cs" />
+    <Compile Include="ArDPPTUPacket.cs" />
+    <Compile Include="ArDrawingData.cs" />
+    <Compile Include="ArECEFCoords.cs" />
+    <Compile Include="ArENUCoords.cs" />
+    <Compile Include="ArFileParser.cs" />
+    <Compile Include="ArForbiddenRangeDevice.cs" />
+    <Compile Include="ArFunctor.cs" />
+    <Compile Include="ArFunctor1_ArRobotPacketP.cs" />
+    <Compile Include="ArFunctor1_CString.cs" />
+    <Compile Include="ArFunctor1_Int.cs" />
+    <Compile Include="ArFunctorASyncTask.cs" />
+    <Compile Include="ArGenericCallbackList_ArFunctorP.cs" />
+    <Compile Include="ArGPS.cs" />
+    <Compile Include="ArGPSConnector.cs" />
+    <Compile Include="ArGPSCoordConverter.cs" />
+    <Compile Include="ArGripper.cs" />
+    <Compile Include="ArGripperCommands.cs" />
+    <Compile Include="ArHasFileName.cs" />
+    <Compile Include="Aria.cs" />
+    <Compile Include="AriaCS.cs" />
+    <Compile Include="AriaCSPINVOKE.cs" />
+    <Compile Include="ArInterpolation.cs" />
+    <Compile Include="ArIrrfDevice.cs" />
+    <Compile Include="ArIRs.cs" />
+    <Compile Include="ArJoyHandler.cs" />
+    <Compile Include="ArJoyVec3f.cs" />
+    <Compile Include="ArJoyVec3i.cs" />
+    <Compile Include="ArKeyHandler.cs" />
+    <Compile Include="ArLaser.cs" />
+    <Compile Include="ArLaserConnector.cs" />
+    <Compile Include="ArLaserFilter.cs" />
+    <Compile Include="ArLaserLogger.cs" />
+    <Compile Include="ArLaserReflectorDevice.cs" />
+    <Compile Include="ArLine.cs" />
+    <Compile Include="ArLineFinder.cs" />
+    <Compile Include="ArLineFinderSegment.cs" />
+    <Compile Include="ArLineSegment.cs" />
+    <Compile Include="ArLineSegmentCmpOp.cs" />
+    <Compile Include="ArLineSegmentVector.cs" />
+    <Compile Include="ArListPos.cs" />
+    <Compile Include="ArLLACoords.cs" />
+    <Compile Include="ArLog.cs" />
+    <Compile Include="ArLogFileConnection.cs" />
+    <Compile Include="ArMap.cs" />
+    <Compile Include="ArMapGPSCoords.cs" />
+    <Compile Include="ArMapInfoInterface.cs" />
+    <Compile Include="ArMapInterface.cs" />
+    <Compile Include="ArMapObject.cs" />
+    <Compile Include="ArMapObjectsInterface.cs" />
+    <Compile Include="ArMapSupplementInterface.cs" />
+    <Compile Include="ArMath.cs" />
+    <Compile Include="ArMD5Calculator.cs" />
+    <Compile Include="ArMode.cs" />
+    <Compile Include="ArModeActs.cs" />
+    <Compile Include="ArModeBumps.cs" />
+    <Compile Include="ArModeCamera.cs" />
+    <Compile Include="ArModeCommand.cs" />
+    <Compile Include="ArModeConfig.cs" />
+    <Compile Include="ArModeGripper.cs" />
+    <Compile Include="ArModeIO.cs" />
+    <Compile Include="ArModeLaser.cs" />
+    <Compile Include="ArModePosition.cs" />
+    <Compile Include="ArModeRobotStatus.cs" />
+    <Compile Include="ArModeSonar.cs" />
+    <Compile Include="ArModeTCM2.cs" />
+    <Compile Include="ArModeTeleop.cs" />
+    <Compile Include="ArModeUnguardedTeleop.cs" />
+    <Compile Include="ArModeWander.cs" />
+    <Compile Include="ArModule.cs" />
+    <Compile Include="ArModuleLoader.cs" />
+    <Compile Include="ArMutex.cs" />
+    <Compile Include="ArNetServer.cs" />
+    <Compile Include="ArNMEAParser.cs" />
+    <Compile Include="ArNovatelGPS.cs" />
+    <Compile Include="ArNovatelSPAN.cs" />
+    <Compile Include="ArP2Arm.cs" />
+    <Compile Include="ArPos2D.cs" />
+    <Compile Include="ArPose.cs" />
+    <Compile Include="ArPoseCmpOp.cs" />
+    <Compile Include="ArPoseUtil.cs" />
+    <Compile Include="ArPoseVector.cs" />
+    <Compile Include="ArPoseWithTime.cs" />
+    <Compile Include="ArPoseWithTimeVector.cs" />
+    <Compile Include="ArPriority.cs" />
+    <Compile Include="ArPriorityResolver.cs" />
+    <Compile Include="ArPTZ.cs" />
+    <Compile Include="ArPTZPtrVector.cs" />
+    <Compile Include="ArRangeBuffer.cs" />
+    <Compile Include="ArRangeDevice.cs" />
+    <Compile Include="ArRangeDeviceThreaded.cs" />
+    <Compile Include="ArRatioInputJoydrive.cs" />
+    <Compile Include="ArRatioInputKeydrive.cs" />
+    <Compile Include="ArRatioInputRobotJoydrive.cs" />
+    <Compile Include="ArRecurrentTask.cs" />
+    <Compile Include="ArResolver.cs" />
+    <Compile Include="ArRetFunctor1_Bool_ArgumentBuilder.cs" />
+    <Compile Include="ArRetFunctor1_Bool_ArgumentBuilderP.cs" />
+    <Compile Include="ArRetFunctor1_Bool_ArRobotPacketP.cs" />
+    <Compile Include="ArRetFunctor1_Double_ArPoseWithTime.cs" />
+    <Compile Include="ArRetFunctor1_VoidP_VoidP.cs" />
+    <Compile Include="ArRetFunctor_Bool.cs" />
+    <Compile Include="ArRetFunctor_Double.cs" />
+    <Compile Include="ArRetFunctor_Int.cs" />
+    <Compile Include="ArRetFunctor_UnsignedInt.cs" />
+    <Compile Include="ArRetFunctor_VoidP.cs" />
+    <Compile Include="ArRobot.cs" />
+    <Compile Include="ArRobotConfig.cs" />
+    <Compile Include="ArRobotConfigPacketReader.cs" />
+    <Compile Include="ArRobotConnector.cs" />
+    <Compile Include="ArRobotJoyHandler.cs" />
+    <Compile Include="ArRobotPacket.cs" />
+    <Compile Include="ArRobotPacketReceiver.cs" />
+    <Compile Include="ArRobotPacketSender.cs" />
+    <Compile Include="ArRobotParams.cs" />
+    <Compile Include="ArRootMeanSquareCalculator.cs" />
+    <Compile Include="ArRunningAverage.cs" />
+    <Compile Include="ArRVisionPacket.cs" />
+    <Compile Include="ArRVisionPTZ.cs" />
+    <Compile Include="ArScopedLock.cs" />
+    <Compile Include="ArSectors.cs" />
+    <Compile Include="ArSensorReading.cs" />
+    <Compile Include="ArSensorReadingVector.cs" />
+    <Compile Include="ArSerialConnection.cs" />
+    <Compile Include="ArSignalHandler.cs" />
+    <Compile Include="ArSimpleConnector.cs" />
+    <Compile Include="ArSimulatedGPS.cs" />
+    <Compile Include="ArSimulatedLaser.cs" />
+    <Compile Include="ArSocket.cs" />
+    <Compile Include="ArSonarAutoDisabler.cs" />
+    <Compile Include="ArSonarDevice.cs" />
+    <Compile Include="ArSonyPacket.cs" />
+    <Compile Include="ArSonyPTZ.cs" />
+    <Compile Include="ArSoundPlayer.cs" />
+    <Compile Include="ArSoundsQueue.cs" />
+    <Compile Include="ArSpeechSynth.cs" />
+    <Compile Include="ArStrCaseCmpOp.cs" />
+    <Compile Include="ArStringInfoGroup.cs" />
+    <Compile Include="ArStringInfoHolder.cs" />
+    <Compile Include="ArStringInfoHolderFunctions.cs" />
+    <Compile Include="ArSyncLoop.cs" />
+    <Compile Include="ArSyncTask.cs" />
+    <Compile Include="ArSystemStatus.cs" />
+    <Compile Include="ArTaskState.cs" />
+    <Compile Include="ArTCM2.cs" />
+    <Compile Include="ArTCMCompassDirect.cs" />
+    <Compile Include="ArTCMCompassRobot.cs" />
+    <Compile Include="ArTcpConnection.cs" />
+    <Compile Include="ArThread.cs" />
+    <Compile Include="ArThreadedCallbackList.cs" />
+    <Compile Include="ArTime.cs" />
+    <Compile Include="ArTimeChecker.cs" />
+    <Compile Include="ArTransform.cs" />
+    <Compile Include="ArTrimbleGPS.cs" />
+    <Compile Include="ArTypes.cs" />
+    <Compile Include="ArUrg.cs" />
+    <Compile Include="ArUtil.cs" />
+    <Compile Include="ArVCC4.cs" />
+    <Compile Include="ArVCC4Commands.cs" />
+    <Compile Include="ArVCC4Packet.cs" />
+    <Compile Include="ArWGS84.cs" />
+    <Compile Include="DoubleVector.cs" />
+    <Compile Include="IntArPoseMap.cs" />
+    <Compile Include="md5_state_t.cs" />
+    <Compile Include="P2ArmJoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SWIGTYPE_p_ArBatteryMTX.cs" />
+    <Compile Include="SWIGTYPE_p_ArConfigArg__RestartLevel.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor1T_ArArgumentBuilder_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor1T_ArNMEAParser__Message_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor1T_ArP2Arm__PacketType_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor1T_ArSoundsQueue__Item_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor1T_double_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor1T_std__string_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor2T_char_p_unsigned_short_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor2T_int_std__vectorT_ArLineSegment_t_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor2T_int_std__vectorT_ArPose_t_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor2T_unsigned_char_short_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor3T_char_const_p_unsigned_short_ArFunctor2T_char_p_unsigned_short_t_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctor3T_char_pp_int_ArSocket_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctorCT_ArKeyHandler_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctorCT_ArRobot_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArFunctorCT_ArSpeechSynth_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArLCDMTX.cs" />
+    <Compile Include="SWIGTYPE_p_ArMapChangeDetails.cs" />
+    <Compile Include="SWIGTYPE_p_ArMapId.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor1CT_bool_ArRobot_ArRobotPacket_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor1T_bool_ArPose_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor1T_bool_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor1T_bool_unsigned_int_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2CT_bool_ArSpeechSynth_char_const_p_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2T_ArBatteryMTX_p_int_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2T_ArLaser_p_int_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2T_ArLCDMTX_p_int_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2T_ArSonarMTX_p_int_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2T_bool_char_const_p_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2T_bool_char_p_size_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor2T_bool_short_p_int_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor3CT_bool_ArConfig_ArArgumentBuilder_p_char_p_size_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor3T_ArDeviceConnection_p_char_const_p_char_const_p_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor3T_bool_ArArgumentBuilder_p_char_p_size_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctor3T_int_ArTime_ArPose_p_ArPoseWithTime_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorCT_bool_ArSpeechSynth_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_Ar3DPoint_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_ArPose_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_ArTime_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_char_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_float_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_long_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_std__listT_ArArgumentBuilder_p_t_const_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_std__string_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRetFunctorT_unsigned_long_t.cs" />
+    <Compile Include="SWIGTYPE_p_ArRobotBatteryPacketReader.cs" />
+    <Compile Include="SWIGTYPE_p_ArSick.cs" />
+    <Compile Include="SWIGTYPE_p_ArSonarMTX.cs" />
+    <Compile Include="SWIGTYPE_p_ArTaskState__State.cs" />
+    <Compile Include="SWIGTYPE_p_bool.cs" />
+    <Compile Include="SWIGTYPE_p_double.cs" />
+    <Compile Include="SWIGTYPE_p_DWORD.cs" />
+    <Compile Include="SWIGTYPE_p_FILE.cs" />
+    <Compile Include="SWIGTYPE_p_float.cs" />
+    <Compile Include="SWIGTYPE_p_f_int_p_q_const__char__void.cs" />
+    <Compile Include="SWIGTYPE_p_HANDLE.cs" />
+    <Compile Include="SWIGTYPE_p_int.cs" />
+    <Compile Include="SWIGTYPE_p_in_addr.cs" />
+    <Compile Include="SWIGTYPE_p_p_ArRangeDevice.cs" />
+    <Compile Include="SWIGTYPE_p_p_char.cs" />
+    <Compile Include="SWIGTYPE_p_p_void.cs" />
+    <Compile Include="SWIGTYPE_p_short.cs" />
+    <Compile Include="SWIGTYPE_p_sockaddr_in.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArAction_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArArgumentBuilder_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArConfigArg_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArConfigArg_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArConfigSection_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArFunctor_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArLaser_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArLineSegment_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArMapObject_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArPoseWithTime_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArPose_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArPose_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArRangeDevice_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArRetFunctor2T_bool_char_const_p_char_const_p_t_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArRetFunctorT_bool_t_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArRobot_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_ArSensorReading_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__listT_std__string_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__mapT_int_ArBatteryMTX_p_std__lessT_int_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__mapT_int_ArLaser_p_std__lessT_int_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__mapT_int_ArLCDMTX_p_std__lessT_int_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__mapT_int_ArSonarMTX_p_std__lessT_int_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__mapT_std__string_ArFunctor1T_ArNMEAParser__Message_t_p_std__lessT_std__string_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__mapT_std__string_ArRetFunctor3T_int_ArTime_ArPose_p_ArPoseWithTime_p_t_p_ArStrCaseCmpOp_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__mapT_std__string_double_std__lessT_std__string_t_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__multimapT_int_ArAction_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__setT_ArLineFinderSegment_p_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__setT_ArPose_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__setT_int_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__setT_std__string_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__string.cs" />
+    <Compile Include="SWIGTYPE_p_std__vectorT_ArPTZParams_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__vectorT_ArVideoParams_t.cs" />
+    <Compile Include="SWIGTYPE_p_std__vectorT_std__string_t.cs" />
+    <Compile Include="SWIGTYPE_p_time_t.cs" />
+    <Compile Include="SWIGTYPE_p_tm.cs" />
+    <Compile Include="SWIGTYPE_p_unsigned_char.cs" />
+    <Compile Include="SWIGTYPE_p_unsigned_int.cs" />
+    <Compile Include="SWIGTYPE_p_unsigned_short.cs" />
+    <Compile Include="SWIGTYPE_p_void.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

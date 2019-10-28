@@ -1,0 +1,14 @@
+<launch>
+   	<node pkg = "rosaria" type = "RosAria" name = "RosAria">
+		<param name="port" value="/dev/ttyUSB0" type="string"/>
+	</node> 
+	<!-- <node pkg="tf" type="static_transform_publisher" name="world2map" args="0 0 0 0 0 0  world map 100" /> -->
+	<node pkg="my_ubuntu" name="test_pointcloud_sensor" type="test_pointcloud_sensor.py" output="screen"/>
+	<node pkg="my_ubuntu" name="test_pose" type="test_pose.py" output="screen"/>
+
+</launch>
+
+<!-- 
+<node pkg="name_of_package" type="name_of_executable(.py)" name="name_of_executable" 
+output="screen"/> 
+-->

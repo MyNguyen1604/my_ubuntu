@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+import rospy
+#from nav_msgs.msg import Odometry
+from geometry_msgs.msg import PoseWithCovarianceStamped as pw
+#from turtlesim.msg import Pose
+def callback(data):
+	#rospy.loginfo("Vi tri cua node %f \n %f",data.linear, data.angular)
+	#print("linear")
+	#print(data.linear)
+	#print("\n")
+	#print("angular")
+	#print(data.angular)
+	#print("\n")
+	print str(data.pose.pose.position.x) + "  " + str(data.pose.pose.position.y)
+def listener():
+	rospy.init_node('listener_node', anonymous=True) 
+	rospy.Subscriber('/initialpose', pw, callback) 
+	rospy.spin()
+	
+if __name__ == '__main__':
+    listener()
+	

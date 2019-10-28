@@ -1,0 +1,10 @@
+<launch>
+   	<node pkg = "rosaria" type = "RosAria" name = "RosAria">
+		<param name="port" value="/dev/ttyS0" type="string"/>
+		<param name="publish_aria_lasers" value="true" type="bool"/>
+	</node> 
+	<node pkg="tf" type="static_transform_publisher" name="world2map" args="0 0 0 0 0 0  world map 100" />
+   	<!--<node pkg = "gmapping" type = "slam_gmapping" name = "slam_gmapping">
+		<param name="scan" value="/RosAria/sim_lms2xx_1_laserscan" type="string"/>
+	</node> -->
+</launch>
